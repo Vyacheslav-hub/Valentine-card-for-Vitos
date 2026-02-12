@@ -20,7 +20,4 @@
   <tr><td></td><td></td><td></td><td></td><td>❤️</td><td>❤️</td><td>❤️</td><td></td><td></td><td></td><td></td></tr>
   <tr><td></td><td></td><td></td><td></td><td></td><td>❤️</td><td></td><td></td><td></td><td></td><td></td></tr>
 </table>
-
----
-*Нажми на ссылку в центре сердца*
 </div>
