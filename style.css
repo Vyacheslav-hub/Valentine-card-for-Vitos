@@ -36,7 +36,11 @@ body {
     position: absolute;
     width: 300px;
     height: 260px;
-    background: white;
+    background-color: white;
+    background-image: url("images/IMG_8162.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     clip-path: path('M150,260 L15,130 A75,75 0,0,1 150,45 A75,75 0,0,1 285,130 Z');
     display: flex;
     flex-direction: column;
@@ -56,7 +60,7 @@ body {
 
 .inner-content p {
     font-size: 0.8rem;
-    color: var(--text-color);
+    color: var(--red);
     margin-top: 10px;
 }
 
