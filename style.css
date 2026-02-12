@@ -1,0 +1,123 @@
+:root {
+    --red: #e63946;
+    --dark-red: #a31621;
+    --text-color: #4a0e0e;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle, #fff0f3 0%, #ffccd5 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Контейнер для центрирования и масштаба */
+.card-wrapper {
+    position: relative;
+    width: 300px;
+    height: 260px;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.15));
+}
+
+/* Общая форма сердца через псевдоэлементы */
+.heart-shape {
+    position: absolute;
+    width: 150px;
+    height: 240px;
+    background: var(--red);
+    border-radius: 150px 150px 0 0;
+}
+
+/* Внутренняя часть (текст) */
+.inner-content {
+    position: absolute;
+    width: 300px;
+    height: 260px;
+    background: white;
+    clip-path: path('M150,260 L15,130 A75,75 0,0,1 150,45 A75,75 0,0,1 285,130 Z');
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 2px solid var(--red);
+}
+
+.inner-content h2 {
+    font-size: 1.5rem;
+    margin: 0;
+    color: var(--red);
+}
+
+.inner-content p {
+    font-size: 0.8rem;
+    color: var(--text-color);
+    margin-top: 10px;
+}
+
+/* Створки сердца */
+.shutter {
+    position: absolute;
+    width: 300px;
+    height: 260px;
+    z-index: 2;
+    cursor: pointer;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Левая створка */
+.shutter.left {
+    clip-path: inset(0 50% 0 0);
+    transform-origin: left center;
+}
+
+/* Правая створка */
+.shutter.right {
+    clip-path: inset(0 0 0 50%);
+    transform-origin: right center;
+}
+
+/* Красивый красный градиент для створок */
+.shutter::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--red) 0%, var(--dark-red) 100%);
+    clip-path: path('M150,260 L15,130 A75,75 0,0,1 150,45 A75,75 0,0,1 285,130 Z');
+}
+
+/* Анимация при открытии */
+.shutter.left.is-open {
+    transform: rotateY(-110deg) translateX(-20px);
+    opacity: 0.9;
+}
+
+.shutter.right.is-open {
+    transform: rotateY(110deg) translateX(20px);
+    opacity: 0.9;
+}
+
+/* Инструкция снизу */
+.hint {
+    position: absolute;
+    bottom: -50px;
+    width: 100%;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #b3888b;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Резиновая верстка */
+@media (max-width: 400px) {
+    .card-wrapper {
+        transform: scale(0.8);
+    }
+}
